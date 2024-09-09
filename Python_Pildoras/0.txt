@@ -1,0 +1,8 @@
+1 = utiliza slicing
+2 = utiliza indexing
+3 = utiliza for
+4 = utiliza funciones
+5 = utiliza while
+6 = utiliza if elif else
+
+ 

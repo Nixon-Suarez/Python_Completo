@@ -1,0 +1,18 @@
+5 fases de un ethical hacking
+1: Reconocimiento   
+2: Escaneo
+3: Obterner accceso
+4: Mantener ccceso
+5: Eliminacion de huellas  
+
+Web Aplication Penetration Testing
+1: Injection
+2: Broken Authentication 
+3: Sensitive Data Exposure
+4: XML External Entity
+5: Broken Access Control
+6: Security Misconfiguration 
+7: Cross-Site Scrapting
+8: Insecure Deserialization 
+9: Using Components with Known Vulnerabilities
+10: Insufficient Loggin&Monitoring 

@@ -1,0 +1,8 @@
+admin
+root
+administrador 
+administrator
+user
+nyamid
+nysm
+123456789
