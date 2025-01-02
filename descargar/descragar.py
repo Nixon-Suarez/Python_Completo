@@ -9,7 +9,7 @@ from pytube import YouTube
 import os
 
 def download_video():
-    url = "https://youtu.be/br2K0XfF6JM?si=bUyD9rPuBUy6-Smh"
+    url = "https://youtu.be/Oyhpwyrq1N0?si=whQUF8nFh3GRXjB6"
     current_folder = os.getcwd()
     yt = YouTube(url)
     audio = yt.streams.filter(only_audio=True).first()

@@ -21,7 +21,7 @@ class Persona:
 
 class Estudiante(Persona):
     def __init__(self, nombre, edad, grado):
-        super().__init__(nombre, edad)
+        super().__init__(nombre, edad)# Super toma los atributos de la clase padre
         self.grado = grado
 
     def DatosGrado(self):

@@ -32,7 +32,6 @@ Estudiante1 = Estudiante("juan", 21, "Peruana", 4.5, "Gran Colombiana")
 print(Estudiante1.notas)
 
 #*Herencia Multiple-------------------------
-
 class Artista():
     def __init__(self, habilidad):
         self.habilidad = habilidad

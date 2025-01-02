@@ -1,7 +1,8 @@
 # el encapsulamiento es basicamente que un atributo o un metodo sea privado osea que solo pueda acceder por medio de la clase
+
 class MiClase:
     def __init__(self):
-        #    ⬇️el encapsulamiento se pone con (__) antes del nombre del atributo o metodo
+        #    ⬇️el encapsulamiento se refleja con (__) antes del nombre del atributo o metodo
         self.__atributo_privado = 1
     
     def __metodoprivado(self):
