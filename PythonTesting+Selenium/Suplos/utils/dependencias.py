@@ -1,10 +1,8 @@
 import os
+from datetime import datetime, timedelta
 
 contador = 0
-def TEXTO ():
-    global contador
-    contador += 1
-    print (f"Oferta de prueba Automatizada {contador}")
+TEXTO = "Oferta de prueba Automatizada 8"
 
 # login
 USER = "diana.acuna@odl.com.co"
@@ -23,8 +21,10 @@ Direccion = ["Presidencia", "Soporte a la operación", "Operaciones", "Legal y a
 Compania = ["ODL", "OBC", "Conjunto"]
 
 # configurar_cronograma
-Fecha_inicio = "2025-01-02" # formato yyyy-mm-dd  Poner un la fecha actual 
-Fecha_cierre = "2025-01-03" # formato yyyy-mm-dd  Poner un la fecha actual mas 1 dia
+fecha_actual = datetime.now()
+Fecha_inicio =  fecha_actual.date().strftime('%Y/%m/%d') # formato yyyy-mm-dd  se poen la fecha actual 
+fecha_mas_un_dia = fecha_actual + timedelta(days=1)
+Fecha_cierre = fecha_mas_un_dia.strftime('%Y/%m/%d') # formato yyyy-mm-dd  pone la fecha actual mas 1 dia
 
 # definir_inquietudes
 Definir_fecha_limite_envio_mensajes = ["No", "Sí"]
@@ -35,7 +35,7 @@ Se_programara_Visita = ["No", "Sí"]
 
 # documentacion_Agregar_contenido_texto
 Tipo_contenido = ["Texto", "Archivo"]
-Archivo = os.path.abspath("C:\\Users\\Nixon\\Downloads\\Programacion\\All of python\\PythonTesting+Selenium\\Suplos\\OfertasODLV2.py\\Archivos\\carga1.png") # ruta del archivo 
+Archivo = os.path.abspath("C:\\Users\\Nixon\\Downloads\\Programacion\\All of python\\PythonTesting+Selenium\\Suplos\\utils\\Captura de pantalla 2024-12-23 085325.png") # ruta del archivo 
 
 # informacion
-Tipo_entregable = ["Texto", "Selección única", "Selección múltiple", "Archivo"]
+Tipo_entregable = ["Texto", "Archivo", "Selección múltiple", "Selección única"]

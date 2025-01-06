@@ -8,7 +8,6 @@ class BasePage():
         self.driver = driver  # Llama al constructor de BasePage
         
     #escribe en la pagina
-    #tambien sube un archivo -> en esta caso object tiene que ser la direccion del archivo
     def write(self, obj, tipoId, id): 
         by_attribute = getattr(By, tipoId)
         element = Wait(self.driver, 10).until(
@@ -34,14 +33,30 @@ class BasePage():
         element.click()
 
     def Upload(self, obj, tipoId, id):
+    # Verificar que el archivo exista
         if not os.path.exists(obj):
             raise FileNotFoundError(f"El archivo '{obj}' no existe.")
         
-        by_attribute = getattr(By, tipoId)
-        element = Wait(self.driver, 20).until(
-            EC.visibility_of_element_located((by_attribute, id)) 
-        )
-        element.send_keys(obj)
+        # Obtener el tipo de selector
+        by_attribute = getattr(By, tipoId.upper(), None)
+        if by_attribute is None:
+            raise ValueError(f"Tipo de selector inválido: '{tipoId}'")
+        
+        try:
+            # Hacer visible el input de tipo file usando JavaScript
+            self.driver.execute_script(f"document.getElementById('{id}').style.display = 'block';")
+            
+            # Esperar a que el elemento esté visible
+            element = Wait(self.driver, 20).until(
+                EC.presence_of_element_located((by_attribute, id))
+            )
+            
+            # Subir el archivo
+            element.send_keys(obj)
+            print(f"Archivo '{obj}' subido exitosamente.")
+        except Exception as e:
+            raise RuntimeError(f"Error al subir el archivo: {e}")
+
 
 #id -> el identificador ejemplo "Botton1" o el expath que seria la direccion 
 #tipoId -> el tipo de identificador que se va a usar ejemplo By.ID o By.XPATH

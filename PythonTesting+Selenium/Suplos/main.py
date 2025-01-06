@@ -6,6 +6,7 @@ from pages.login import login
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import time
 
 class TestCrearOfertaRFI(unittest.TestCase):
 
@@ -33,11 +34,14 @@ class TestCrearOfertaRFI(unittest.TestCase):
         OfertaRFIPrueba.definir_inquietudes(main_page)
         OfertaRFIPrueba.programar_visita(main_page)
         OfertaRFIPrueba.documentacion(main_page)
+
+
         OfertaRFIPrueba.informacion(main_page)
 
     def tearDown(self):
         """Cierre del driver al finalizar cada prueba"""
         if self.driver:
+            time.sleep(10)
             self.driver.quit()
 
 if __name__ == "__main__":

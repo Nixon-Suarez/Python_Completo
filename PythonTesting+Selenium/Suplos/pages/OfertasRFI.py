@@ -9,7 +9,7 @@ class ofertasRFI():
         mainPage.click("XPATH", '//a[@onclick="cargarCrearOfertasAraru(\'RFI\', \'cerrada\')"]')
 
     def info_basica(self, mainPage):
-        #* info basica
+        #* info basica                
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_informacion_basica"]/div/div[1]/div[2]/div[2]/div/div/textarea') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_informacion_basica"]/div/div[1]/div[2]/div[3]/div/div/textarea') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         mainPage.click("XPATH", f'//option[text()="{Tipo_de_necesidad}"]')
@@ -36,17 +36,15 @@ class ofertasRFI():
         mainPage.click("CSS_SELECTOR", 'a[data-action="incrementHour"]')
         time.sleep(2)
 
-    #------------------------
     def guardar(self, mainPage):
         #*Guardar
         mainPage.click("XPATH", '//*[@id="divSolicitarRegistroOfertas"]/div/div/div/div/div/div/div/div[3]/div/div/button') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         time.sleep(5)
-    #------------------------
+        mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
+        time.sleep(3)
 
     def definir_inquietudes(self, mainPage):
         #* Limite de inquitudes
-        mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
-        time.sleep(3)
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_inquietudes"]')
         time.sleep(3)
 
@@ -65,42 +63,70 @@ class ofertasRFI():
             # mainPage.click("XPATH", '//button[contains(@class, "btn btn-primary") and contains(text(), "Adicionar")]')
             # mainPage.click("CSS_SELECTOR", 'a[href="#divRegistroVisitae643b208-a5f9-4e91-bf56-4b2b9a726eef"]')
 
-    #----------------------------
+    #?----------------------------
     def documentacion(self, mainPage):
         #*Contenido - Documentación petición de ofertas / Términos y condiciones del proceso
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_contenido_documentacion"]')
         mainPage.click("XPATH", '//button[contains(@class, "btn btn-primary") and contains(text(), " Agregar contenido")]')
-        # self.documentacion_Agregar_contenido_Archivo(mainPage)
+        self.documentacion_Agregar_contenido_Archivo(mainPage)
         self.documentacion_Agregar_contenido_texto(mainPage)
+        mainPage.click("XPATH", '//*[@id="tab_contenido_documentacion"]/div/div[2]/div/div/div[3]/button[2]') #!XPATH real cerrar
 
     def documentacion_Agregar_contenido_texto(self, mainPage):
         mainPage.click("XPATH", f'//option[text()="{Tipo_contenido[0]}"]')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Título del contenido (*):"]]/input')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Descripción del contenido:"]]/textarea')
         mainPage.write(TEXTO, "ID", 'mce_0_ifr')
-
-        mainPage.click("XPATH", "//button[contains(@class, 'btn-success') and contains(text(), 'Agregar')]")
-        mainPage.click("XPATH", '//*[@id="tab_contenido_documentacion"]/div/div[2]/div/div/div[3]/button[2]') #!XPATH real
+        self.agregarDucumentacion(mainPage)
 
     def documentacion_Agregar_contenido_Archivo(self, mainPage):
+        mainPage.click("XPATH", f'//option[text()="{Tipo_contenido[1]}"]')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Nombre del archivo (*):"]]/input')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Descripción del archivo:"]]/textarea')
-        #!subir el archivo esta fallando 
-        mainPage.click("ID", 'rutaContenidoArchivo')
         mainPage.Upload(Archivo, "ID", 'rutaContenidoArchivo')
+        mainPage.click("CSS_SELECTOR", 'a[href="../ic_controladores/ctrl_uploadfiles.php"]')
+        time.sleep(5)
+        mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
+        self.agregarDucumentacion(mainPage)
 
+    def agregarDucumentacion(self, mainPage):
         mainPage.click("XPATH", "//button[contains(@class, 'btn-success') and contains(text(), 'Agregar')]")
-        mainPage.click("XPATH", '//*[@id="tab_contenido_documentacion"]/div/div[2]/div/div/div[3]/button[2]') #!XPATH real
-    #------------------------------
+    #?------------------------------
 
+    #*--------------------------------
     def informacion(self, mainPage):
         # Información - Entregables de la oferta por parte de los oferentes
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_entregables"]')
         mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar entregable')]")
-        mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[0]}"]')
+        self.informacion_agregar_texto(mainPage)
+        self.informacion_agregar_archivo(mainPage)
+        self.informacion_agregar_seleccion_multiple(mainPage)
 
+        mainPage.click("XPATH", '//*[@id="tab_entregables"]/div[1]/div[2]/div[1]/div[1]/div[3]/button[2]')
+
+    def informacion_agregar_texto(self, mainPage):
+        mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[0]}"]')
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div/input')
         mainPage.write(TEXTO, "ID", 'mce_2_ifr')
-        mainPage.click("XPATH", '(//button[contains(@class, "btn-success") and contains(text(), "Agregar")])[2]')
-        mainPage.click("XPATH", '(//button[@data-bs-dismiss="modal" and contains(text(), "Cerrar")])[3]')
+        self.agregraInformacion(mainPage)
+    
+    def informacion_agregar_archivo(self, mainPage):
+        mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[1]}"]')
+        mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Título del archivo a solicitar (*):"]]/input')
+        mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Descripción del archivo a solicitar:"]]/textarea')
+        self.agregraInformacion(mainPage)
+    
+    def informacion_agregar_seleccion_multiple(self, mainPage):
+        mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[2]}"]')
+        mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Pregunta contenido (*):"]]/input')
+        mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[4]/div[2]/div/div/button')
+        mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[4]/div[2]/div[1]/div/div/input')
+        self.agregraInformacion(mainPage)
+    
+    def informacion_agregar_seleccion_unica(self, mainPage):
+        mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[3]}"]')
+    #agregar los demas campos 
 
+    def agregraInformacion(self, mainPage):
+        mainPage.click("XPATH", '(//button[contains(@class, "btn-success") and contains(text(), "Agregar")])[2]')
+    #*---------------------------------
