@@ -101,8 +101,9 @@ class ofertasRFI():
         self.informacion_agregar_texto(mainPage)
         self.informacion_agregar_archivo(mainPage)
         self.informacion_agregar_seleccion_multiple(mainPage)
+        self.informacion_agregar_seleccion_unica(mainPage)
 
-        mainPage.click("XPATH", '//*[@id="tab_entregables"]/div[1]/div[2]/div[1]/div[1]/div[3]/button[2]')
+        mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[3]/button[2]')
 
     def informacion_agregar_texto(self, mainPage):
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[0]}"]')
@@ -125,8 +126,19 @@ class ofertasRFI():
     
     def informacion_agregar_seleccion_unica(self, mainPage):
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[3]}"]')
-    #agregar los demas campos 
+        mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[1]/input')
+
+        mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[2]/div/div/button')
+        mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[2]/div[1]/div/div/input')
+        self.agregraInformacion(mainPage)
 
     def agregraInformacion(self, mainPage):
         mainPage.click("XPATH", '(//button[contains(@class, "btn-success") and contains(text(), "Agregar")])[2]')
+
+    def informacion_seleccion_sobre(self, mainPage):
+        pass
+        #! meter aqui la funcion Write_iterable_objects
+        # mainPage.click("XPATH", f'//option[text()="{sobre[0]}"]')
+
     #*---------------------------------
+

@@ -34,9 +34,8 @@ class TestCrearOfertaRFI(unittest.TestCase):
         OfertaRFIPrueba.definir_inquietudes(main_page)
         OfertaRFIPrueba.programar_visita(main_page)
         OfertaRFIPrueba.documentacion(main_page)
-
-
         OfertaRFIPrueba.informacion(main_page)
+        OfertaRFIPrueba.informacion_seleccion_sobre(main_page)
 
     def tearDown(self):
         """Cierre del driver al finalizar cada prueba"""

@@ -2,7 +2,7 @@ import os
 from datetime import datetime, timedelta
 
 contador = 0
-TEXTO = "Oferta de prueba Automatizada 8"
+TEXTO = "Oferta de prueba Automatizada 9"
 
 # login
 USER = "diana.acuna@odl.com.co"
@@ -39,3 +39,4 @@ Archivo = os.path.abspath("C:\\Users\\Nixon\\Downloads\\Programacion\\All of pyt
 
 # informacion
 Tipo_entregable = ["Texto", "Archivo", "Selección múltiple", "Selección única"]
+sobre = ["Documentación jurídica", "Documentación técnica", "documentación económica", "documentaciÓn financiera", "sobre capacitaciones", "Sobre económico, técnica", "administrador de desempeno", "ofertas"]

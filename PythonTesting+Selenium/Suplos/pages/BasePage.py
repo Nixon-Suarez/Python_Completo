@@ -8,11 +8,11 @@ class BasePage():
         self.driver = driver  # Llama al constructor de BasePage
         
     #escribe en la pagina
-    def write(self, obj, tipoId, id): 
+    def write(self, obj, tipoId, id, index=None): 
         by_attribute = getattr(By, tipoId)
         element = Wait(self.driver, 10).until(
             EC.element_to_be_clickable((by_attribute, id)) 
-        ) 
+        )
         element.send_keys(obj)
 
     #lee la pagina
