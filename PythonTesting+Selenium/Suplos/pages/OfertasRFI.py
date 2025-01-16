@@ -1,6 +1,5 @@
-from utils.dependencias import *
+from utils.dependencias_ODL import *
 import time
-
 class ofertasRFI(): 
     def ir_a_Ofertas_RFI(self, mainPage):
         #👇 Valida si dentro el div que tenga adentro un p que tenga el texto Materialización - Proceso / Eventos y preciona el a
@@ -36,7 +35,7 @@ class ofertasRFI():
         mainPage.click("CSS_SELECTOR", 'a[data-action="incrementHour"]')
         time.sleep(2)
 
-    def guardar(self, mainPage):
+    def guardar_inicial(self, mainPage):
         #*Guardar
         mainPage.click("XPATH", '//*[@id="divSolicitarRegistroOfertas"]/div/div/div/div/div/div/div/div[3]/div/div/button') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         time.sleep(5)
@@ -102,6 +101,7 @@ class ofertasRFI():
         self.informacion_agregar_archivo(mainPage)
         self.informacion_agregar_seleccion_multiple(mainPage)
         self.informacion_agregar_seleccion_unica(mainPage)
+        self.informacion_seleccion_sobre(mainPage)
 
         mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[3]/button[2]')
 
@@ -136,9 +136,28 @@ class ofertasRFI():
         mainPage.click("XPATH", '(//button[contains(@class, "btn-success") and contains(text(), "Agregar")])[2]')
 
     def informacion_seleccion_sobre(self, mainPage):
-        pass
-        #! meter aqui la funcion Write_iterable_objects
-        # mainPage.click("XPATH", f'//option[text()="{sobre[0]}"]')
+        id_seleccion_tr = '//tr[@class="vertical-middle"]'
+        numero_columna = 6
+        mainPage.Write_iterable_objects(value, id_seleccion_tr, numero_columna)
 
-    #*---------------------------------
 
+    #*-----------------
+
+
+    def criterios(self, mainPage):
+        mainPage.click("CSS_SELECTOR", 'a[href="#tab_criterios_evaluacion"]')
+        mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar criterio')]")
+        mainPage.write(TEXTO, "XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[3]/textarea')
+
+
+        #! esta dañado el resto del llenaod de info 
+        # tipo de evaluacion y sobre fallan
+
+        mainPage.click("XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[6]/button[1]')
+
+
+    def Guardado_general(self, mainPage):
+        mainPage.click("XPATH", '//*[@id="divSolicitarRegistroOfertas"]/div/div/div/div/div/div/div/div[12]/div/div/button[2]')
+        time.sleep(5)
+        mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
+        time.sleep(3)

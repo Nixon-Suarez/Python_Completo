@@ -1,0 +1,29 @@
+def click(self, tipoId, id, index=None):
+        """
+        Método para hacer clic en un elemento específico.
+        Si se especifica un índice, selecciona un elemento específico de una lista.
+        Si no se especifica un índice, busca y hace clic en el primer elemento.
+
+        Args:
+            tipoId (str): Tipo de localizador (por ejemplo, "XPATH", "CSS_SELECTOR").
+            id (str): Selector del elemento.
+            index (int, optional): Índice del elemento si hay múltiples coincidencias. Por defecto, None.
+        """
+        by_attribute = getattr(By, tipoId)
+
+        # Si no se especifica un índice, busca un único elemento
+        if index is None:
+            element = Wait(self.driver, 10).until(
+                EC.element_to_be_clickable((by_attribute, id))
+            )
+            element.click()
+        else:
+            # Si se especifica un índice, busca una lista de elementos
+            elements = Wait(self.driver, 10).until(
+                EC.presence_of_all_elements_located((by_attribute, id))
+            )
+            if len(elements) > index:
+                element = elements[index]
+                Wait(self.driver, 10).until(EC.element_to_be_clickable(element)).click()
+            else:
+                raise IndexError(f"No hay suficientes elementos para el índice {index}. Total elementos: {len(elements)}")

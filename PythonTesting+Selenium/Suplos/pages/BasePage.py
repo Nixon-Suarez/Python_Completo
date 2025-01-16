@@ -8,7 +8,7 @@ class BasePage():
         self.driver = driver  # Llama al constructor de BasePage
         
     #escribe en la pagina
-    def write(self, obj, tipoId, id, index=None): 
+    def write(self, obj, tipoId, id): 
         by_attribute = getattr(By, tipoId)
         element = Wait(self.driver, 10).until(
             EC.element_to_be_clickable((by_attribute, id)) 
@@ -27,6 +27,14 @@ class BasePage():
     #clickea en la pagina
     def click(self, tipoId, id):
         by_attribute = getattr(By, tipoId)
+
+        element  = Wait(self.driver, 10).until(
+            EC.visibility_of_element_located((by_attribute, id)) #espera hasta que el elemento sea visible
+        )
+        
+        # Desplazarse al elemento si está fuera del área visible
+        self.driver.execute_script("arguments[0].scrollIntoView(true);", element)
+
         element = Wait(self.driver, 10).until(
             EC.element_to_be_clickable((by_attribute, id))
         )
