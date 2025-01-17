@@ -4,7 +4,7 @@ from utils.dependencias_ocensa import *
 class login(): 
     def loginSuplos(self, mainPage):
         try:
-            N=1
+            N=29
             mainPage.write(USER[N], "NAME", 'vUsuario')
             mainPage.write(PASSWORD, "NAME", 'vClave')
             # Seleccion suplos

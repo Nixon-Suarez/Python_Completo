@@ -6,7 +6,7 @@ class comentarios_proveedores_Ocensa():
         mainPage.click("XPATH", '//*[@id="contenedorPrincipal"]/div/div/div/div[3]/div/div/a[3]') 
     
     def ver_detalle_proveedor(self, mainPage):
-        mainPage.click("XPATH", "//td/i[@title='Detalle']", index=1)
+        mainPage.click("XPATH", "//td/i[@title='Detalle']", index=3)
         
     def ir_pestaña_gestion_profecionales(self, mainPage):
         mainPage.click("XPATH", '//*[@id="infoDetalleProov"]/div[3]/div/ul/li[13]/a')

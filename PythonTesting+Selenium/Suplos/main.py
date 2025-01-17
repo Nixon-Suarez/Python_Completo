@@ -8,6 +8,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.comentarios_proveedores_Ocensa import comentarios_proveedores_Ocensa
 import time
+from utils.dependencias_ocensa import *
 
 class TestCrearOfertaRFI(unittest.TestCase):
 
@@ -42,10 +43,9 @@ class TestCrearOfertaRFI(unittest.TestCase):
 
     def test_ocensa_cometario_proveedor(self):
         main_page = Persona(self.driver)
-
+        time.sleep(2)
         Login = login()
         Login.loginSuplos(main_page)
-
         PruebaCrearComentario = comentarios_proveedores_Ocensa()
         PruebaCrearComentario.ir_a_proveedores(main_page)
         PruebaCrearComentario.ver_detalle_proveedor(main_page)
@@ -58,8 +58,8 @@ class TestCrearOfertaRFI(unittest.TestCase):
     def tearDown(self):
         """Cierre del driver al finalizar cada prueba"""
         if self.driver:
-            time.sleep(10)
+            time.sleep(5)
             self.driver.quit()
 
 if __name__ == "__main__":
-    unittest.main()
+    unittest.main()  

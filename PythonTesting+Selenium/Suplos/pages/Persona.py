@@ -112,8 +112,6 @@ class Persona(BasePage):
             raise
 
     def limpiarcache(self):
-        # Borra todas las cookies
-        self.driver.delete_all_cookies()
-        # Recargar la página
-        self.driver.refresh()
+        pass
+    #! agregar una forma que no me de errores 
 
