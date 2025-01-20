@@ -142,8 +142,6 @@ class ofertasRFI():
 
 
     #*-----------------
-
-
     def criterios(self, mainPage):
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_criterios_evaluacion"]')
         mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar criterio')]")
@@ -151,7 +149,9 @@ class ofertasRFI():
 
 
         #! esta dañado el resto del llenaod de info 
-        # tipo de evaluacion y sobre fallan
+        # sobre fallan
+        mainPage.click("XPATH", f'//option[text()="{tipo_evaluacion[0]}"]', index=1)
+        mainPage.click("XPATH", f'//option[text()="{value}"]', index=1)
 
         mainPage.click("XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[6]/button[1]')
 

@@ -1,10 +1,10 @@
-# from utils.dependencias_ODL import *
-from utils.dependencias_ocensa import *
+from utils.dependencias_ODL import *
+# from utils.dependencias_ocensa import *
 
 class login(): 
     def loginSuplos(self, mainPage):
         try:
-            N=29
+            N=0
             mainPage.write(USER[N], "NAME", 'vUsuario')
             mainPage.write(PASSWORD, "NAME", 'vClave')
             # Seleccion suplos
@@ -17,3 +17,4 @@ class login():
 
         except Exception as e:
                 print(f"Error en loginSuplos: {e}")
+                

@@ -30,7 +30,9 @@ USER = ["oleon@intelcost.com", #Tipo2
         "Responsable_impuestos@suplos.com", #*
         "Responsable_outsourcing_impuestos@suplos.com", #* no tiene los permisos para ver el detalle
         "Responsable_excelencia_abastecimiento@suplos.com", #*
-        "Responsable_legal_externo@suplos.com" #*  no tiene los permisos para ver el detalle
+        "Responsable_legal_externo@suplos.com", #*  no tiene los permisos para ver el detalle
+        "Responsable_agente_carga@suplos.com", #*
+        "visualizacion_auditoria@intelcost.com" #* Auditoria
         ]
 
 
