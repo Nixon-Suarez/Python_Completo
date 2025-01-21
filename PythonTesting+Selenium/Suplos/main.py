@@ -3,6 +3,7 @@ from seleniumbase import Driver
 from pages.Persona import Persona
 from pages.OfertasRFI import ofertasRFI
 from pages.login import login
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -39,6 +40,8 @@ class TestCrearOfertaRFI(unittest.TestCase):
         OfertaRFIPrueba.informacion(main_page)
         OfertaRFIPrueba.Guardado_general(main_page)
         OfertaRFIPrueba.criterios(main_page)
+        OfertaRFIPrueba.cuadro_economico(main_page)
+        OfertaRFIPrueba.usuarios_internos(main_page)
         OfertaRFIPrueba.Guardado_general(main_page)
 
 

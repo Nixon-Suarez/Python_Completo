@@ -2,7 +2,7 @@ import os
 from datetime import datetime, timedelta
 
 contador = 0
-TEXTO = "Oferta de prueba Automatizada 10"
+TEXTO = "Oferta de prueba Automatizada 12"
 
 # login
 USER = ["diana.acuna@odl.com.co"]
@@ -46,3 +46,9 @@ value = "Documentación jurídica"
 
 #criterios
 tipo_evaluacion = ["Cumplimiento", "Puntuable"]
+
+#Cuadro Economico
+Cuadro_economico = os.path.abspath("C:\\Users\\Nixon\\Downloads\\Programacion\\All of python\\PythonTesting+Selenium\\Suplos\\utils\\Plantilla presentación oferta RFI-0169-25 20250114143730.xlsx")
+
+# usuarios internos evaluadores
+usuario_evaluador = ["Zulma salazar 1", "Zulma salazar 2"]

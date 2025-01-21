@@ -1,6 +1,7 @@
 from pages.BasePage import BasePage
 from selenium.webdriver.common.by import By
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
@@ -111,7 +112,12 @@ class Persona(BasePage):
             print(f"Error al procesar el popup: {e}")
             raise
 
-    def limpiarcache(self):
-        pass
-    #! agregar una forma que no me de errores 
+    def ENTER (self, tipoid, id):
+
+        by_attribute = getattr(By, tipoid)
+
+        element = Wait(self.driver, 10).until(
+                EC.element_to_be_clickable((by_attribute, id))
+        )
+        element.send_keys(Keys.RETURN) 
 

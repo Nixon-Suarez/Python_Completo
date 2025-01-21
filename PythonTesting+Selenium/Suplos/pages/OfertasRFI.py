@@ -140,16 +140,11 @@ class ofertasRFI():
         numero_columna = 6
         mainPage.Write_iterable_objects(value, id_seleccion_tr, numero_columna)
 
-
-    #*-----------------
     def criterios(self, mainPage):
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_criterios_evaluacion"]')
         mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar criterio')]")
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[3]/textarea')
 
-
-        #! esta dañado el resto del llenaod de info 
-        # sobre fallan
         mainPage.click("XPATH", f'//option[text()="{tipo_evaluacion[0]}"]', index=1)
         mainPage.click("XPATH", f'//option[text()="{value}"]', index=1)
 
@@ -161,3 +156,20 @@ class ofertasRFI():
         time.sleep(5)
         mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
         time.sleep(3)
+
+    def cuadro_economico(self, mainPage):
+        mainPage.click("CSS_SELECTOR", 'a[href="#tab_cuadro_economico"]')
+        mainPage.click("ID", 'btnCargarCuadroEconomico')
+        mainPage.Upload(Cuadro_economico, "ID", 'archivoCargueCuadro')
+        mainPage.click("CSS_SELECTOR", 'a[href="../ic_controladores/odl/ctrl_ofertas_cuadro_cotizacion.php"]')
+        mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
+
+    def usuarios_internos(self, mainPage):
+        mainPage.click("CSS_SELECTOR", 'a[href="#tab_usuarios_internos"]')
+        mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar usuario interno evaluador')]")
+        mainPage.click("XPATH", '//*[@id="tab_usuarios_internos"]/div/div[1]/div[2]/div[1]/table/tbody/tr/td[2]/div/span/span[1]/span')
+        mainPage.write(usuario_evaluador[1], "XPATH", '/html/body/span/span/span[1]/input')
+        mainPage.ENTER("XPATH", '/html/body/span/span/span[1]/input')
+        mainPage.click("XPATH", "//button[contains(@class, 'btn-info') and contains(text(), 'Accesos')]")
+        mainPage.click("XPATH", "//button[contains(@class, 'btn-default') and contains(text(), 'Seleccionar todos')]")
+        mainPage.click("XPATH", "//button[contains(@class, 'btn-default') and contains(text(), 'Cerrar')]")
