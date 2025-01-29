@@ -1,10 +1,12 @@
-from utils.dependencias_ODL import *
+# from utils.dependencias_ODL import *
+from utils.dependencias_vanti import *
+import time
 # from utils.dependencias_ocensa import *
 
 class login(): 
     def loginSuplos(self, mainPage):
         try:
-            N=0
+            N=1
             mainPage.write(USER[N], "NAME", 'vUsuario')
             mainPage.write(PASSWORD, "NAME", 'vClave')
             # Seleccion suplos
@@ -14,7 +16,7 @@ class login():
             # mainPage.click('//*[@id="inpSelectEmpresaLogin"]/option[text()="SUPLOS"]', "XPATH")
             mainPage.click("NAME", 'vEntrada')
             print(f"login con usuarios {USER[N]}")
+            time.sleep(2)
 
         except Exception as e:
                 print(f"Error en loginSuplos: {e}")
-                

@@ -8,10 +8,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from pages.comentarios_proveedores_Ocensa import comentarios_proveedores_Ocensa
+from pages.DesempeñoVanti import DesempeñoVanti
 import time
 from utils.dependencias_ocensa import *
 
-class TestCrearOfertaRFI(unittest.TestCase):
+class Tests(unittest.TestCase):
 
     def setUp(self):
         """Configuración inicial para cada prueba"""
@@ -23,26 +24,46 @@ class TestCrearOfertaRFI(unittest.TestCase):
             EC.presence_of_element_located((By.TAG_NAME, "body"))
         )
 
-    def test_crear_oferta_rfi(self):
+    def test_vantiPerfiles(self):
         main_page = Persona(self.driver)
 
         Login = login()
         Login.loginSuplos(main_page)
 
-        OfertaRFIPrueba = ofertasRFI()
-        OfertaRFIPrueba.ir_a_Ofertas_RFI(main_page)
-        OfertaRFIPrueba.info_basica(main_page)
-        OfertaRFIPrueba.configurar_cronograma(main_page)
-        OfertaRFIPrueba.guardar_inicial(main_page)
-        OfertaRFIPrueba.definir_inquietudes(main_page)
-        OfertaRFIPrueba.programar_visita(main_page)
-        OfertaRFIPrueba.documentacion(main_page)
-        OfertaRFIPrueba.informacion(main_page)
-        OfertaRFIPrueba.Guardado_general(main_page)
-        OfertaRFIPrueba.criterios(main_page)
-        OfertaRFIPrueba.cuadro_economico(main_page)
-        OfertaRFIPrueba.usuarios_internos(main_page)
-        OfertaRFIPrueba.Guardado_general(main_page)
+        DesempeñoVantiPruebas = DesempeñoVanti()
+        DesempeñoVantiPruebas.ir_a_desempeño(main_page)
+        DesempeñoVantiPruebas.Consultar_ejercicio(main_page)
+        DesempeñoVantiPruebas.ir_a_desempeño(main_page)
+        DesempeñoVantiPruebas.evaluar_proveedores(main_page)
+        DesempeñoVantiPruebas.ir_a_desempeño(main_page)
+        DesempeñoVantiPruebas.ver_resultados(main_page)
+        DesempeñoVantiPruebas.ir_a_desempeño(main_page)
+
+        # DesempeñoVantiPruebas.crear_ejercicio_desempeño(main_page)
+        
+
+
+
+    # def test_crear_oferta_rfi(self):
+        # main_page = Persona(self.driver)
+
+        # Login = login()
+        # Login.loginSuplos(main_page)
+
+        # OfertaRFIPrueba = ofertasRFI()
+        # OfertaRFIPrueba.ir_a_Ofertas_RFI(main_page)
+        # OfertaRFIPrueba.info_basica(main_page)
+        # OfertaRFIPrueba.configurar_cronograma(main_page)
+        # OfertaRFIPrueba.guardar_inicial(main_page)
+        # OfertaRFIPrueba.definir_inquietudes(main_page)
+        # OfertaRFIPrueba.programar_visita(main_page)
+        # OfertaRFIPrueba.documentacion(main_page)
+        # OfertaRFIPrueba.informacion(main_page)
+        # OfertaRFIPrueba.Guardado_general(main_page)
+        # OfertaRFIPrueba.criterios(main_page)
+        # OfertaRFIPrueba.cuadro_economico(main_page)
+        # OfertaRFIPrueba.usuarios_internos(main_page)
+        # OfertaRFIPrueba.Guardado_general(main_page)
 
 
     # def test_ocensa_cometario_proveedor(self):
@@ -58,6 +79,7 @@ class TestCrearOfertaRFI(unittest.TestCase):
     #         PruebaCrearComentario.precionar_agregar_gestion(main_page)
     #         PruebaCrearComentario.gestion_profecionales(main_page)
     #         time.sleep(2)
+
 
     def tearDown(self):
         """Cierre del driver al finalizar cada prueba"""

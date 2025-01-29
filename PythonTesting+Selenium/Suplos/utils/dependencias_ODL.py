@@ -22,7 +22,7 @@ Compania = ["ODL", "OBC", "Conjunto"]
 
 # configurar_cronograma
 fecha_actual = datetime.now()
-Fecha_inicio =  fecha_actual.date().strftime('%Y/%m/%d') # formato yyyy-mm-dd  se poen la fecha actual 
+Fecha_inicio =  fecha_actual.date().strftime('%Y/%m/%d') # formato yyyy-mm-dd  se pone la fecha actual 
 fecha_mas_un_dia = fecha_actual + timedelta(days=1)
 Fecha_cierre = fecha_mas_un_dia.strftime('%Y/%m/%d') # formato yyyy-mm-dd  pone la fecha actual mas 1 dia
 

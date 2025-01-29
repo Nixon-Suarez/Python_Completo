@@ -64,6 +64,7 @@ class BasePage():
             print(f"Archivo '{obj}' subido exitosamente.")
         except Exception as e:
             raise RuntimeError(f"Error al subir el archivo: {e}")
+            
 
 
 #id -> el identificador ejemplo "Botton1" o el expath que seria la direccion 

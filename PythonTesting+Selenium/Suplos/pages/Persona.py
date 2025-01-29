@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
+from selenium.webdriver.common.action_chains import ActionChains
 class Persona(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -121,3 +122,20 @@ class Persona(BasePage):
         )
         element.send_keys(Keys.RETURN) 
 
+    def ENTER_GENERAL(self):
+        actions = ActionChains(self.driver)
+        actions.send_keys(Keys.ENTER).perform()
+
+
+    def ValidarElementoExistente(self, tipoId, id):
+        by_attribute = getattr(By, tipoId)
+        try:
+            # Espera hasta que el elemneto sea visible (máximo 5 segundos)
+            Wait(self.driver, 5).until(
+                EC.visibility_of_element_located((by_attribute, id))
+            )
+            raise Exception(f"Elemento detectado: {id}")
+
+        except TimeoutException:
+            # Si el popup no aparece, simplemente continúa
+            print("No se detectó ningún el elemeto.")

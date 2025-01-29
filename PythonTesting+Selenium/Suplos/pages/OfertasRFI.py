@@ -2,13 +2,13 @@ from utils.dependencias_ODL import *
 import time
 class ofertasRFI(): 
     def ir_a_Ofertas_RFI(self, mainPage):
+
         #👇 Valida si dentro el div que tenga adentro un p que tenga el texto Materialización - Proceso / Eventos y preciona el a
         mainPage.click("XPATH", '//div[.//p[text()="Materialización - Proceso / Eventos"]]/a')
         #👇crear oferta RFI validando el a que tenga el onclick argarCrearOfertasAraru 'RFI', 'cerrada'
         mainPage.click("XPATH", '//a[@onclick="cargarCrearOfertasAraru(\'RFI\', \'cerrada\')"]')
 
-    def info_basica(self, mainPage):
-        #* info basica                
+    def info_basica(self, mainPage):            
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_informacion_basica"]/div/div[1]/div[2]/div[2]/div/div/textarea') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_informacion_basica"]/div/div[1]/div[2]/div[3]/div/div/textarea') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         mainPage.click("XPATH", f'//option[text()="{Tipo_de_necesidad}"]')
@@ -25,8 +25,7 @@ class ofertasRFI():
         mainPage.click("XPATH", f'//option[text()="{Compania[0]}"]')
         mainPage.write(Presupuesto, "XPATH", '//input[@class="form-control numero"]') 
 
-    def configurar_cronograma(self, mainPage):
-        #*cronograma
+    def configurar_cronograma(self, mainPage):  
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_cronograma"]') #seleccion con el CSS_SELECTOR mejor forma de seleccionar un a
         mainPage.write(Fecha_inicio, "ID", 'datepickerFechaInicio')
         mainPage.write(Fecha_cierre, "ID", 'datepickerFechaCierre')
@@ -35,7 +34,8 @@ class ofertasRFI():
         mainPage.click("CSS_SELECTOR", 'a[data-action="incrementHour"]')
         time.sleep(2)
 
-    def guardar_inicial(self, mainPage):
+
+    def guardar_inicial(self, mainPage):    
         #*Guardar
         mainPage.click("XPATH", '//*[@id="divSolicitarRegistroOfertas"]/div/div/div/div/div/div/div/div[3]/div/div/button') #!Xpath real del textarea de objeto - puede dar error en ele futuro
         time.sleep(5)
@@ -46,7 +46,6 @@ class ofertasRFI():
         #* Limite de inquitudes
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_inquietudes"]')
         time.sleep(3)
-
         mainPage.click("XPATH", f'//label[text()="¿Definir fecha límite de envío de mensajes?:"]/following-sibling::div/select/option[text()="{Definir_fecha_limite_envio_mensajes[0]}"]') #! corregir cuando se haga el input
         if Definir_fecha_limite_envio_mensajes[0] == "Sí":
             mainPage.write(Fecha_limite, "ID", 'datepickerFechaLimiteMsgFecha')
@@ -62,8 +61,10 @@ class ofertasRFI():
             # mainPage.click("XPATH", '//button[contains(@class, "btn btn-primary") and contains(text(), "Adicionar")]')
             # mainPage.click("CSS_SELECTOR", 'a[href="#divRegistroVisitae643b208-a5f9-4e91-bf56-4b2b9a726eef"]')
 
+
     #?----------------------------
     def documentacion(self, mainPage):
+        
         #*Contenido - Documentación petición de ofertas / Términos y condiciones del proceso
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_contenido_documentacion"]')
         mainPage.click("XPATH", '//button[contains(@class, "btn btn-primary") and contains(text(), " Agregar contenido")]')
@@ -72,6 +73,7 @@ class ofertasRFI():
         mainPage.click("XPATH", '//*[@id="tab_contenido_documentacion"]/div/div[2]/div/div/div[3]/button[2]') #!XPATH real cerrar
 
     def documentacion_Agregar_contenido_texto(self, mainPage):
+        
         mainPage.click("XPATH", f'//option[text()="{Tipo_contenido[0]}"]')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Título del contenido (*):"]]/input')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Descripción del contenido:"]]/textarea')
@@ -106,18 +108,21 @@ class ofertasRFI():
         mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[3]/button[2]')
 
     def informacion_agregar_texto(self, mainPage):
+        
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[0]}"]')
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[2]/div/input')
         mainPage.write(TEXTO, "ID", 'mce_2_ifr')
         self.agregraInformacion(mainPage)
     
     def informacion_agregar_archivo(self, mainPage):
+    
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[1]}"]')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Título del archivo a solicitar (*):"]]/input')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Descripción del archivo a solicitar:"]]/textarea')
         self.agregraInformacion(mainPage)
-    
+
     def informacion_agregar_seleccion_multiple(self, mainPage):
+    
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[2]}"]')
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//p[text()="Pregunta contenido (*):"]]/input')
         mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[4]/div[2]/div/div/button')
@@ -125,39 +130,41 @@ class ofertasRFI():
         self.agregraInformacion(mainPage)
     
     def informacion_agregar_seleccion_unica(self, mainPage):
+    
         mainPage.click("XPATH", f'//div[label[contains(text(),"Tipo de entregable (*)")]]/select/option[text()="{Tipo_entregable[3]}"]')
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[1]/input')
-
         mainPage.click("XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[2]/div/div/button')
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_entregables"]/div/div[2]/div/div/div[2]/div/div/div[2]/div/div[5]/div[2]/div[1]/div/div/input')
         self.agregraInformacion(mainPage)
 
     def agregraInformacion(self, mainPage):
+        
         mainPage.click("XPATH", '(//button[contains(@class, "btn-success") and contains(text(), "Agregar")])[2]')
-
+        
     def informacion_seleccion_sobre(self, mainPage):
         id_seleccion_tr = '//tr[@class="vertical-middle"]'
         numero_columna = 6
         mainPage.Write_iterable_objects(value, id_seleccion_tr, numero_columna)
 
+
     def criterios(self, mainPage):
+    
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_criterios_evaluacion"]')
         mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar criterio')]")
         mainPage.write(TEXTO, "XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[3]/textarea')
-
         mainPage.click("XPATH", f'//option[text()="{tipo_evaluacion[0]}"]', index=1)
         mainPage.click("XPATH", f'//option[text()="{value}"]', index=1)
-
         mainPage.click("XPATH", '//*[@id="tab_criterios_evaluacion"]/div/div/div[2]/div[1]/table/tbody/tr/td[6]/button[1]')
-
-
+    
     def Guardado_general(self, mainPage):
+        
         mainPage.click("XPATH", '//*[@id="divSolicitarRegistroOfertas"]/div/div/div/div/div/div/div/div[12]/div/div/button[2]')
         time.sleep(5)
         mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
         time.sleep(3)
 
     def cuadro_economico(self, mainPage):
+        
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_cuadro_economico"]')
         mainPage.click("ID", 'btnCargarCuadroEconomico')
         mainPage.Upload(Cuadro_economico, "ID", 'archivoCargueCuadro')
@@ -165,6 +172,7 @@ class ofertasRFI():
         mainPage.click("CSS_SELECTOR", 'button.swal2-confirm.swal2-styled')
 
     def usuarios_internos(self, mainPage):
+        
         mainPage.click("CSS_SELECTOR", 'a[href="#tab_usuarios_internos"]')
         mainPage.click("XPATH", "//button[contains(@class, 'btn-primary') and contains(text(), 'Agregar usuario interno evaluador')]")
         mainPage.click("XPATH", '//*[@id="tab_usuarios_internos"]/div/div[1]/div[2]/div[1]/table/tbody/tr/td[2]/div/span/span[1]/span')
