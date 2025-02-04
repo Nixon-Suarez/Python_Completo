@@ -1,0 +1,338 @@
+0----
+login con usuarios maria_azuaje@suplos.com
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios mgarcia_auditor@vanti.com
+0----
+login con usuarios maria_azuaje@suplos.com
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios mgarcia_auditor@vanti.com
+0----
+login con usuarios maria_azuaje@suplos.com
+0----
+login con usuarios oleon@intelcost.com
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios Administrador_planeacion@suplos.com
+0----
+login con usuarios oleon@intelcost.com
+0----
+0----
+login con usuarios oleon@intelcost.com
+ paso 5 - se ejecuto exitosamente
+                                ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios Administrador_planeacion@suplos.com
+Error en la función para mgarcia_auditor@vanti.com: Error al intentar hacer clic en el elemento: HTTPConnectionPool(host='localhost', port=61679): Max retries exceeded with url: /session/87ddd5e8a699dfa30d92a728a9a0559a/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001E30D105260>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión'))
+1----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+login con usuarios Administrador_planeacion@suplos.com
+0----
+login con usuarios oleon@intelcost.com
+Error en la función para maria_azuaje@suplos.com: Error al intentar hacer clic en el elemento: ('Connection aborted.', ConnectionResetError(10054, 'Se ha forzado la interrupción de una conexión existente por el host remoto', None, 10054, None))
+0----
+0----
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+ paso 5 - se ejecuto exitosamente
+                                ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios Administrador_planeacion@suplos.com
+Error en la función para mgarcia_auditor@vanti.com: Error al intentar hacer clic en el elemento: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704E09]
+	(No symbol) [0x00007FF6177490E4]
+	(No symbol) [0x00007FF61777FDB9]
+	(No symbol) [0x00007FF61777A76B]
+	(No symbol) [0x00007FF617779836]
+	(No symbol) [0x00007FF6176D2EC5]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF6176D1AD4]
+	GetHandleVerifier [0x00007FF617CB5198+3917304]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+
+1----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+login con usuarios Administrador_planeacion@suplos.com
+Error en la función para mgarcia_auditor@vanti.com: Error al intentar hacer clic en el elemento: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704E09]
+	(No symbol) [0x00007FF6177490E4]
+	(No symbol) [0x00007FF61777FDB9]
+	(No symbol) [0x00007FF61777A76B]
+	(No symbol) [0x00007FF617779836]
+	(No symbol) [0x00007FF6176D2EC5]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF6176D1AD4]
+	GetHandleVerifier [0x00007FF617CB5198+3917304]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+
+1----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+login con usuarios Administrador_planeacion@suplos.com
+Error en la función para mgarcia_auditor@vanti.com: Error al intentar hacer clic en el elemento: Message: invalid session id
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704E09]
+	(No symbol) [0x00007FF6177490E4]
+	(No symbol) [0x00007FF61777FDB9]
+	(No symbol) [0x00007FF61777A76B]
+	(No symbol) [0x00007FF617779836]
+	(No symbol) [0x00007FF6176D2EC5]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF6176D1AD4]
+	GetHandleVerifier [0x00007FF617CB5198+3917304]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+
+1----
+0----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+0----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios oleon@intelcost.com
+Error en la función para maria_azuaje@suplos.com: Error al intentar hacer clic en el elemento: HTTPConnectionPool(host='localhost', port=62943): Max retries exceeded with url: /session/68832dc83c56fc02ce02954d07cd5557/element (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020CD11C4E20>: Failed to establish a new connection: [WinError 10061] No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión'))
+0----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+Error en la función para maria_azuaje@suplos.com: No se pudo hacer clic con JavaScript: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//a[span[text()='Desempeño']]"}
+  (Session info: chrome=132.0.6834.160); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+
+0----
+Error en loginSuplos: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6178FFBE5+28741]
+	(No symbol) [0x00007FF617867890]
+	(No symbol) [0x00007FF617704FDA]
+	(No symbol) [0x00007FF617759322]
+	(No symbol) [0x00007FF61775954C]
+	(No symbol) [0x00007FF6177A3337]
+	(No symbol) [0x00007FF61777FF4F]
+	(No symbol) [0x00007FF6177A00B4]
+	(No symbol) [0x00007FF61777FCB3]
+	(No symbol) [0x00007FF617749FB3]
+	(No symbol) [0x00007FF61774B331]
+	GetHandleVerifier [0x00007FF617C3A73D+3414941]
+	GetHandleVerifier [0x00007FF617C4E64A+3496618]
+	GetHandleVerifier [0x00007FF617C4413D+3454365]
+	GetHandleVerifier [0x00007FF6179C848B+850155]
+	(No symbol) [0x00007FF6178737FF]
+	(No symbol) [0x00007FF61786F0C4]
+	(No symbol) [0x00007FF61786F25D]
+	(No symbol) [0x00007FF61785E079]
+	BaseThreadInitThunk [0x00007FFA0001257D+29]
+	RtlUserThreadStart [0x00007FFA0152AF08+40]
+ 
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+0----
+login con usuarios oleon@intelcost.com
+0----
+0----
+login con usuarios maria_azuaje@suplos.com
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------
+1----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios mgarcia_auditor@vanti.com
+No se detectó ningún el elemeto. 
+Elmento encontrado 
+Elmento encontrado 
+No se detectó ningún el elemeto. 
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------
+2----
+Error en loginSuplos: Popup detectado: Estimado usuario - Hubo una incidencia al intentar realizar el ingreso, por favor recargar la página o cerrar la ventana y volver a intentarlo. Si la incidencia persiste, puede ponerse en contacto a través de nuestros canales de atención. 
+login con usuarios mgarcia_profesional_abastecimiento_lider_categoria@vanti.com
+Elmento encontrado 
+Elmento encontrado 
+Elmento encontrado 
+No se detectó ningún el elemeto. 
+ paso 5 - se ejecuto exitosamente
+                            ---------------------------

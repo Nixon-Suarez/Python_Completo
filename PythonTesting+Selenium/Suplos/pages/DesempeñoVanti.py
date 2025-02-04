@@ -18,7 +18,19 @@ class DesempeñoVanti():
         mainPage.click("XPATH", "//a[.//span[@data-original-title='Ver/Evaluar']]", index=0)
         time.sleep(2)
         mainPage.ValidarElementoExistente("XPATH", "//a[.//span[@data-original-title='Ver/Evaluar']]")
-        
+    
+    def validarCreardesempeño(self, mainPage):
+        mainPage.ValidarElementoExistenteTrue("XPATH", "//a[contains(text(),'Crear ejercicio de evaluación')]")
+
+    def validarConsultar_ejercicio(self, mainPage):
+        mainPage.ValidarElementoExistenteTrue("XPATH", "//a[contains(text(),'Consultar')]")
+
+    def validarevaluar_proveedores(self, mainPage):
+        mainPage.ValidarElementoExistenteTrue("XPATH", "//a[contains(text(),'Evaluar proveedor')]")
+    
+    def validarver_resultados(self, mainPage):
+        mainPage.ValidarElementoExistenteTrue("XPATH", "//a[contains(text(),'Resultados')]")
+
     def crear_ejercicio_desempeño(self, mainPage):
         mainPage.click("XPATH", "//a[contains(text(),'Crear ejercicio de evaluación')]")
         mainPage.write(TEXTO, "XPATH", '//div[contains(@class, "form-group") and .//label[text()="Periodo a evaluar (*)"]]/input')
@@ -33,13 +45,17 @@ class DesempeñoVanti():
         mainPage.ENTER_GENERAL()
         mainPage.ENTER_GENERAL()
 
-    def ver_resultados(self, mainPage):
-        mainPage.click("XPATH", "//a[contains(text(),'Aprobar')]")
+    def ver_resultados(self, mainPage): 
+        mainPage.click("XPATH", "//a[contains(text(),'Resultados')]")
         mainPage.ValidarElementoExistente("XPATH", "//td/i[@title='Detalle']")
 
     def evaluar_proveedores(self, mainPage):
         mainPage.click("XPATH", "//a[contains(text(),'Evaluar proveedor')]")
         mainPage.ValidarElementoExistente("XPATH", "//td/i[@title='Detalle']")
 
-    def nueva_evaluacion(self, mianPage):
+    def nueva_evaluacion(self, mainPage):
         pass
+
+    def cerrarSesion(self, mainPage):
+        mainPage.click("XPATH", "//a[img[contains(@src, 'noimage.png')]]")
+        mainPage.click("XPATH", '/html/body/div[2]/header/nav/div/ul/li[5]/ul/li[2]/div[2]/a')

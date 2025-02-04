@@ -1,12 +1,12 @@
 # from utils.dependencias_ODL import *
 from utils.dependencias_vanti import *
-import time
 # from utils.dependencias_ocensa import *
+from pages.reporte import reporte
+import time
 
-class login(): 
-    def loginSuplos(self, mainPage):
+class login():
+    def loginSuplos(self, mainPage, N):
         try:
-            N=1
             mainPage.write(USER[N], "NAME", 'vUsuario')
             mainPage.write(PASSWORD, "NAME", 'vClave')
             # Seleccion suplos
@@ -15,8 +15,15 @@ class login():
             # hace lo mismo☝️👇
             # mainPage.click('//*[@id="inpSelectEmpresaLogin"]/option[text()="SUPLOS"]', "XPATH")
             mainPage.click("NAME", 'vEntrada')
-            print(f"login con usuarios {USER[N]}")
+            mainPage.handle_popup("CLASS_NAME", "swal2-popup", "swal2-title", "swal2-content")
+            usuariologin = (f"login con usuarios {USER[N]}\n")
+            print(usuariologin)
+            reporte(usuariologin)
             time.sleep(2)
+            return True
 
         except Exception as e:
-                print(f"Error en loginSuplos: {e}")
+                error = (f"Error en loginSuplos: {e} \n")
+                print(error)
+                reporte(error)
+                return False

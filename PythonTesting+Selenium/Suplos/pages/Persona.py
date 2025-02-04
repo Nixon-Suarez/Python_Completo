@@ -7,6 +7,8 @@ from selenium.webdriver.support.ui import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementClickInterceptedException
 from selenium.webdriver.common.action_chains import ActionChains
+
+from pages.reporte import reporte
 class Persona(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -126,7 +128,7 @@ class Persona(BasePage):
         actions = ActionChains(self.driver)
         actions.send_keys(Keys.ENTER).perform()
 
-
+    # Si se encuentra da un error
     def ValidarElementoExistente(self, tipoId, id):
         by_attribute = getattr(By, tipoId)
         try:
@@ -134,8 +136,35 @@ class Persona(BasePage):
             Wait(self.driver, 5).until(
                 EC.visibility_of_element_located((by_attribute, id))
             )
+            reporte(f"elemento detectado {id} \n")
             raise Exception(f"Elemento detectado: {id}")
 
         except TimeoutException:
             # Si el popup no aparece, simplemente continúa
             print("No se detectó ningún el elemeto.")
+            reporte("No se detectó ningún el elemeto. \n")
+            return True
+
+    def ValidarElementoExistenteTrue(self, tipoId, id):
+        by_attribute = getattr(By, tipoId)
+        try:
+            Wait(self.driver, 5).until(
+                EC.visibility_of_element_located((by_attribute, id))
+            )
+            print("Elmento encontrado ")
+            reporte("Elmento encontrado \n")
+            return True
+
+        except TimeoutException:
+            # Si el popup no aparece, simplemente continúa
+            print("No se detectó ningún el elemeto.")
+            reporte("No se detectó ningún el elemeto. \n")
+            return False
+        
+    @staticmethod
+    def ejecutar_seguro(func, *args, **kwargs):
+        try:
+            func(*args, **kwargs)
+        except Exception as e:
+            print(f"Se produjo una excepción en {func.__name__}: {e}. Continuando ejecución...")
+            assert False, f"Fallo en {func.__name__}: {e}"

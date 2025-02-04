@@ -30,4 +30,6 @@ class comentarios_proveedores_Ocensa():
         mainPage.handle_popup("CLASS_NAME", "swal2-popup", "swal2-title", "swal2-content")
 
 
-
+    def cerrarSesion(self, mainPage):
+        mainPage.click("XPATH", "//a[img[contains(@src, 'noimage.png')]]")
+        mainPage.click("XPATH", "//a[text()='Cerrar Sesion']")
